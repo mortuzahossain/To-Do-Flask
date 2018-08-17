@@ -59,7 +59,7 @@
                 <tr>
                     <td>{{loop.index}}</td>
                     <td>{{row["task"]}}</td>
-                    <td><a href="#">Update</a></td>
+                    <td><a href="{{ url_for('update',id=row['id']) }}">Update</a></td>
                 </tr>
                 
                 {% endfor %}

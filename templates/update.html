@@ -35,7 +35,7 @@
     <div class="container text-center input_data">
         <div class="row">
             <form action="" method="post">
-                <input class="form-control" type="text" name="todo" placeholder="To do task..." value="<?php echo $query['todo_text'];  ?>">
+                <input class="form-control" type="text" name="todo" placeholder="To do task..." value="{{data['task']}}">
                 <input type="reset" name="Reset" class="btn btn">
                 <input type="submit" name="update" value="Update" class="btn btn-primary">
                 <input type="submit" name="delete" value="Delete" class="btn btn-danger">
