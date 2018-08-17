@@ -1,0 +1,125 @@
+/* Base CSS */
+
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+
+a:focus {
+    outline: 0 solid
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    background-color: #flllff;
+    background-image: linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+}
+
+a:hover {
+    text-decoration: none
+}
+
+
+/* Remove Chrome Input Field's Unwanted Yellow Background Color */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+.header {
+    padding: 35px;
+}
+
+.header_text {
+    font-family: cursive;
+    font-size: 50px;
+    text-shadow: 3px 5px 3px #66B;
+    border-bottom: 9px red solid;
+    padding-bottom: 40px;
+    margin-bottom: -40px;
+    border-radius: 10px;
+}
+
+.input_data {
+    padding: 26px 30px 27px 30px;
+    margin-bottom: -15px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.display_data {
+    border-top: 9px red solid;
+    border-radius: 10px;
+}
+
+td:last-child {
+    text-align: center;
+}
+
+td:last-child a {
+    background: #2AB9E6;
+    padding: 3px 6px;
+    color: #fff;
+}
+
+td:last-child a:hover {
+    background-color: red;
+    transition: 1s;
+}
+
+.bg-primary,
+.bg-danger {
+    padding: 10px;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 60px 60px 0 0;
+    margin-top: -35px;
+}
+
+table tr:first-child td {
+    font-size: 18px;
+    background: #666;
+    color: white;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: rgba(232, 255, 97, 0.66);
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+    background-color: rgba(183, 189, 145, 0.66);
+}
