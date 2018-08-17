@@ -36,7 +36,7 @@
     <!--Inserting Form-->
     <div class="container text-center input_data">
         <div class="row">
-            <form action="" method="post" class="form-inline">
+            <form action="{{ url_for('adddata') }}" method="post" class="form-inline">
                 <input class="form-control" type="text" name="todo" placeholder="To do task...">
                 <button type="submit" class="btn btn-primary form-control">Save</button>
             </form>
@@ -50,16 +50,19 @@
             <table class="table table-striped">
                 
                 <tr>
-                    <td>#</td>
+                    <td>No</td>
                     <td>Task</td>
                     <td>Action</td>
                 </tr>
 
+                {% for row in rows %}
                 <tr>
-                    <td>1</td>
-                    <td>This is test Task</td>
+                    <td>{{loop.index}}</td>
+                    <td>{{row["task"]}}</td>
                     <td><a href="#">Update</a></td>
                 </tr>
+                
+                {% endfor %}
 
             </table>
         </div>
