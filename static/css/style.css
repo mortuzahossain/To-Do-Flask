@@ -90,13 +90,13 @@ td:last-child {
     text-align: center;
 }
 
-td:last-child a {
+td> a {
     background: #2AB9E6;
     padding: 3px 6px;
     color: #fff;
 }
 
-td:last-child a:hover {
+td> a:hover {
     background-color: red;
     transition: 1s;
 }

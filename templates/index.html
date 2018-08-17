@@ -52,7 +52,8 @@
                 <tr>
                     <td>No</td>
                     <td>Task</td>
-                    <td>Action</td>
+                    <td>Update</td>
+                    <td>Delete</td>
                 </tr>
 
                 {% for row in rows %}
@@ -60,6 +61,7 @@
                     <td>{{loop.index}}</td>
                     <td>{{row["task"]}}</td>
                     <td><a href="{{ url_for('update',id=row['id']) }}">Update</a></td>
+                    <td><a href="{{ url_for('delete',id=row['id']) }}">Delete</a></td>
                 </tr>
                 
                 {% endfor %}

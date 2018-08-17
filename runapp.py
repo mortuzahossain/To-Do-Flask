@@ -17,6 +17,20 @@ def singletodo(id):
 	cur.execute("SELECT * FROM todos WHERE id = ?",(id,))
 	return cur.fetchall()[0]
 
+def deteletodo(id):
+	con = sql.connect("database.db")
+	cur = con.cursor()
+	cur.execute("DELETE FROM todos WHERE id = ?",(id,))
+	con.commit()
+	return
+
+def updatetodo(id,task):
+	con = sql.connect("database.db")
+	cur = con.cursor()
+	cur.execute("UPDATE todos SET task = ? WHERE id = ?",(task,id,))
+	con.commit()
+	return
+
 
 
 # FOR INDEX PAGE
@@ -40,11 +54,19 @@ def index():
 # FOR UPDATE PAGE
 @app.route("/update/<id>",methods = ['POST', 'GET'])
 def update(id):
+	if request.method == 'POST':
+		task = request.form['todo']
+		updatetodo(id,task)
 	data = singletodo(id)
 	return render_template('update.html',data = data)
 
+# FOR DELETE
+@app.route("/delete/<id>")
+def delete(id):
+	deteletodo(id)
+	return render_template('index.html',rows = todolists())
 
-# FOR ABOUT PAGE
+# FOR ABOUT PAGE -- UNDER CONSTRUCTION
 @app.route("/about")
 def about():
     return "About"
