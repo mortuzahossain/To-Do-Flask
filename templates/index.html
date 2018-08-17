@@ -30,15 +30,15 @@
     </div>
 
     
-    <p class='text-center bg-danger'>Something Wrong. Please try again<p>
+    <!-- <p class='text-center bg-danger'>Something Wrong. Please try again<p> -->
 
 
     <!--Inserting Form-->
     <div class="container text-center input_data">
         <div class="row">
-            <form action="{{ url_for('adddata') }}" method="post" class="form-inline">
+            <form action="{{ url_for('index') }}" method="POST" class="form-inline">
                 <input class="form-control" type="text" name="todo" placeholder="To do task...">
-                <button type="submit" class="btn btn-primary form-control">Save</button>
+                <button type="submit" value="submit" class="btn btn-primary form-control">Save</button>
             </form>
         </div>
     </div>
