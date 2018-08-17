@@ -1,5 +1,5 @@
 import sqlite3 as sql
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect,url_for
 
 app = Flask(__name__)
 
@@ -7,7 +7,7 @@ def todolists():
 	con = sql.connect("database.db")
 	con.row_factory = sql.Row
 	cur = con.cursor()
-	cur.execute("select * from todos")
+	cur.execute("SELECT * FROM todos ORDER BY id DESC")
 	return cur.fetchall()
 
 def singletodo(id):
@@ -36,7 +36,6 @@ def updatetodo(id,task):
 # FOR INDEX PAGE
 @app.route("/",methods = ['POST', 'GET'])
 @app.route("/index",methods = ['POST', 'GET'])
-@app.route("/index.html",methods = ['POST', 'GET'])
 def index():
 	if request.method == 'POST':
 		try:
@@ -64,7 +63,7 @@ def update(id):
 @app.route("/delete/<id>")
 def delete(id):
 	deteletodo(id)
-	return render_template('index.html',rows = todolists())
+	return redirect(url_for('index'))
 
 # FOR ABOUT PAGE -- UNDER CONSTRUCTION
 @app.route("/about")
